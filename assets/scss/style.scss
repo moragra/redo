@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Products*/
+
+.container_products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:    "header header"
+                            "main   main";
+    header{
+        grid-area: header;
+        margin-top: 60px;
+        padding: 10px;
+        .group_header{
+            display: flex;
+            justify-content: center;
+            h1 {
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+                font-weight: lighter;
+                transform: rotate(-90deg);
+                display: block;
+            }
+            .hand_made_img {
+                margin: 10px;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    border-radius: 10px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+.products_main {
+    grid-area: main;
+    display: flex;
+    padding: 25px;
+    h2 {
+        position: relative;
+        left: 65px;
+        top: 45px;
+        margin: 10px;
+        padding: 10px;
+        font-weight: lighter;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+    }
+    section {
+        margin: 15px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 50px;
+        justify-content: center;
+        article {
+            width: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            img {
+                display: flex;
+                margin: 5px;
+                padding: 10px;
+                width: 400px;
+            }
+            h3 {
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media (min-width:350px) and (max-width:576px){
+
+    .header {
+        grid-area: header;
+        margin-top: 60px;
+        padding: 10px;
+    }
+    
+    .group_header{
+        display: flex;
+        align-items:center ;
+    }
+    
+    .hand_made_title h1 {
+        margin-left: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        font-size: 35px;
+        font-weight: 400;
+        transform: rotate(0deg);
+    }
+
+    .main{
+        margin: 0;
+        padding: 0;
+    }
+
+    .products_title {
+        left: 10px;
+    }
+
+    .cards{
+        display: flex;
+    }
+
+    .products_cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+    }
+
+    .products_img{
+        width:200px;
+    }
+
+    .products_text{
+        width: 150px;
+        font-size: 9px;
+    }
+}
