@@ -148,4 +148,10 @@
   text-decoration: none;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.blur {
+  background: rgba(0, 0, 0, 0.2);
+  filter: blur(20px);
+  z-index: 99999;
 }/*# sourceMappingURL=style.css.map */

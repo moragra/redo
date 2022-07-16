@@ -170,3 +170,9 @@
         }
     }
 }
+
+.blur {
+    background: rgba(0, 0, 0, 0.2); // Make sure this color has an opacity of less than 1
+    filter: blur(20px);
+    z-index: 99999;
+}
