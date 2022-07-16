@@ -10,23 +10,23 @@
 
 .container_products {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto;
-    grid-template-areas:    "header header"
-                            "main   main";
+    grid-template-areas:    "header header  header"
+                            "main   main    main";
     header{
         grid-area: header;
-        margin-top: 60px;
+        margin-top: 10px;
         padding: 10px;
         .group_header{
             display: flex;
             justify-content: center;
+            align-items: center;
             h1 {
                 font-family: $font_family;
                 color: $text_color;
                 font-weight: lighter;
                 transform: rotate(-90deg);
-                display: block;
             }
             .hand_made_img {
                 margin: 10px;
@@ -46,11 +46,9 @@
 .products_main {
     grid-area: main;
     display: flex;
-    padding: 25px;
+    padding: 15px;
     h2 {
-        position: relative;
-        left: 65px;
-        top: 45px;
+        height: 10px;
         margin: 10px;
         padding: 10px;
         font-weight: lighter;
@@ -58,14 +56,14 @@
         color: $text_color;
     }
     section {
-        margin: 15px;
+        margin: 5px;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        padding: 50px;
+        padding: 5px;
         justify-content: center;
         article {
-            width: 450px;
+            width: 30%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -74,12 +72,121 @@
                 display: flex;
                 margin: 5px;
                 padding: 10px;
-                width: 400px;
+                width: 100%;
             }
             h3 {
                 font-family: $font_family;
                 color: $text_color;
                 padding-bottom: 10px;
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+.container_cart {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows:  auto auto auto;
+    grid-template-areas:    "header  header   aside"
+                            "main    main   aside"
+                            "main    main   aside";
+    header {
+        grid-area: header;
+        h4{
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            padding: 10px;
+        }
+    }
+    main {
+        grid-area: main;
+        .cart {
+            section{
+                display: flex;
+                article {
+                    div {
+                        .cart_img {
+                            width: 20%;
+                        }
+                        h3 {
+                            font-size: 13px;
+                            font-family: Arial, Helvetica, sans-serif;
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    aside {
+        grid-area: aside;
+        .aside_payment{
+            margin:20px;
+            display: flex;
+            height: 95%;
+            justify-content: center;
+            .payment_details {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                h4 {
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: black;
+                    padding-top: 30px;
+                }
+                .card{
+                    background-color: #3983f3;
+                    width: 400px;
+                    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 20px;
+                    .visa {
+                        display: flex;
+                        justify-content: end;
+                        padding: 35px 25px 10px 5px;
+                        img {
+                            width: 23%;
+                        }
+                    }
+                    .card_info {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        .card_number{
+                            width: 100%;
+                            .card_text {
+                                font-family: Arial, Helvetica, sans-serif;
+                                color: rgb(70, 68, 68);
+                                padding: 0 0 5px 10px;
+                            }
+                        }
+                        .card_names {
+                            display: flex;
+                            width: 100%;
+                            padding: 10px;
+                            .card_text {
+                                font-family: Arial, Helvetica, sans-serif;
+                                color: rgb(70, 68, 68);
+                                padding: 0 0 5px 10px;
+                            }
+                        }
+                        
+                    }
+                }
+                form {
+                    bottom: 100;
+                    button{
+                        background-color: rgb(71, 70, 70);
+                        border: none;
+                        width: 100%;
+                        padding: 10px;
+                        a {
+                            text-decoration: none;
+                            color: white;
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+                    }
+                }
             }
         }
     }
