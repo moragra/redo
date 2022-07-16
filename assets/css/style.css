@@ -42,7 +42,6 @@
 .products_main {
   grid-area: main;
   display: flex;
-  padding: 15px;
 }
 .products_main h2 {
   height: 10px;
@@ -52,40 +51,22 @@
   font-family: Arial, Helvetica, sans-serif;
   color: black;
 }
-.products_main section {
-  margin: 5px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 5px;
-  justify-content: center;
-}
-.products_main section article {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 .products_main section article img {
   display: flex;
   margin: 5px;
   padding: 10px;
   width: 100%;
 }
-.products_main section article h3 {
+.products_main section article .h3_text {
+  text-align: center;
+}
+.products_main section article .h3_text h3 {
   font-family: Arial, Helvetica, sans-serif;
   color: black;
   padding-bottom: 10px;
   font-size: 13px;
 }
 
-.container_cart {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
-  grid-template-areas: "header  header   aside" "main    main   aside" "main    main   aside";
-}
 .container_cart header {
   grid-area: header;
 }
@@ -97,13 +78,10 @@
 .container_cart main {
   grid-area: main;
 }
-.container_cart main .cart section {
-  display: flex;
+.container_cart main .cart article div .cart_img {
+  width: 30%;
 }
-.container_cart main .cart section article div .cart_img {
-  width: 20%;
-}
-.container_cart main .cart section article div h3 {
+.container_cart main .cart article div h3 {
   font-size: 13px;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
@@ -112,24 +90,23 @@
   grid-area: aside;
 }
 .container_cart aside .aside_payment {
-  margin: 20px;
   display: flex;
+  flex-direction: column;
   height: 95%;
   justify-content: center;
 }
 .container_cart aside .aside_payment .payment_details {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  background-color: rgb(195, 195, 195);
 }
 .container_cart aside .aside_payment .payment_details h4 {
   font-family: Arial, Helvetica, sans-serif;
   color: black;
-  padding-top: 30px;
 }
 .container_cart aside .aside_payment .payment_details .card {
   background-color: #3983f3;
-  width: 400px;
+  width: 110%;
   box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
 }
@@ -152,28 +129,22 @@
 .container_cart aside .aside_payment .payment_details .card .card_info .card_number .card_text {
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(70, 68, 68);
-  padding: 0 0 5px 10px;
 }
 .container_cart aside .aside_payment .payment_details .card .card_info .card_names {
   display: flex;
   width: 100%;
-  padding: 10px;
 }
 .container_cart aside .aside_payment .payment_details .card .card_info .card_names .card_text {
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(70, 68, 68);
-  padding: 0 0 5px 10px;
 }
-.container_cart aside .aside_payment .payment_details form {
-  bottom: 100;
-}
-.container_cart aside .aside_payment .payment_details form button {
+.container_cart aside .aside_payment form button {
   background-color: rgb(71, 70, 70);
   border: none;
   width: 100%;
   padding: 10px;
 }
-.container_cart aside .aside_payment .payment_details form button a {
+.container_cart aside .aside_payment form button a {
   text-decoration: none;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
