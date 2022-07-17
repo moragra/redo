@@ -78,6 +78,7 @@
 }
 
 .container_cart {
+    
     header {
         grid-area: header;
         h4{
@@ -111,8 +112,6 @@
             height: 95%;
             justify-content: center;
             .payment_details {
-                display: flex;
-                flex-direction: column;
                 background-color: rgb(195, 195, 195);
                 h4 {
                     font-family: Arial, Helvetica, sans-serif;

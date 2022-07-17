@@ -96,8 +96,6 @@
   justify-content: center;
 }
 .container_cart aside .aside_payment .payment_details {
-  display: flex;
-  flex-direction: column;
   background-color: rgb(195, 195, 195);
 }
 .container_cart aside .aside_payment .payment_details h4 {
