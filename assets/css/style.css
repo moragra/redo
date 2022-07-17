@@ -93,7 +93,9 @@
   display: flex;
   flex-direction: column;
   height: 95%;
-  justify-content: center;
+  justify-content: start;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .container_cart aside .aside_payment .payment_details {
   background-color: rgb(195, 195, 195);
