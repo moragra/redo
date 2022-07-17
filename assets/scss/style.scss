@@ -1,12 +1,23 @@
 @import "variable";
 
+@mixin Flex_Properties ($display,$flex-direction,$flex-wrap,$justify-content,$align-items){
+    display: $display;
+    flex-direction: $flex-direction;
+    flex-wrap: $flex-wrap;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-
+.m-p-10 {
+    margin: 10px;
+    padding: 10px;
+}
 
 /*Products*/
 
@@ -21,9 +32,7 @@
         margin-top: 10px;
         padding: 10px;
         .group_header{
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include Flex_Properties(flex, none, none, center, center);
             h1 {
                 font-family: $font_family;
                 color: $text_color;
@@ -31,11 +40,8 @@
                 transform: rotate(-90deg);
             }
             .hand_made_img {
-                margin: 10px;
-                padding: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @extend .m-p-10;
+                @include Flex_Properties(flex, none, none, center, center);
                 img {
                     border-radius: 10px;
                     width: 100%;
@@ -49,9 +55,8 @@
     grid-area: main;
     display: flex;
     h2 {
+        @extend .m-p-10;
         height: 10px;
-        margin: 10px;
-        padding: 10px;
         font-weight: lighter;
         font-family: $font_family;
         color: $text_color;
@@ -60,8 +65,7 @@
         article {
             img {
                 display: flex;
-                margin: 5px;
-                padding: 10px;
+                @extend .m-p-10;
                 width: 100%;
             }
             .h3_text{
@@ -82,7 +86,7 @@
     header {
         grid-area: header;
         h4{
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: $font_family;
             color: black;
             padding: 10px;
         }
@@ -96,7 +100,7 @@
                         width: 30%;
                     }
                     h3 {
-                        font-family: Arial, Helvetica, sans-serif;
+                        font-family: map-get($card_text, font-family);
                         color: black;
                     }
                 }
@@ -106,16 +110,14 @@
     aside {
         grid-area: aside;
         .aside_payment{
-            display: flex;
-            flex-direction: column;
+            @include Flex_Properties(flex, column, none, start, none);
             height: 95%;
-            justify-content: start;
             margin-top: 10px;
             margin-bottom: 10px;
             .payment_details {
                 background-color: rgb(195, 195, 195);
                 h4 {
-                    font-family: Arial, Helvetica, sans-serif;
+                    font-family: map-get($card_text, font-family);
                     color: black;
                 }
                 .card{
@@ -124,8 +126,7 @@
                     box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
                     border-radius: 20px;
                     .visa {
-                        display: flex;
-                        justify-content: end;
+                        @include Flex_Properties(flex, none, none, end, none);
                         padding: 35px 25px 10px 5px;
                         img {
                             width: 23%;
@@ -133,21 +134,20 @@
                     }
                     .card_info {
                         width: 100%;
-                        display: flex;
-                        flex-direction: column;
+                        @include Flex_Properties(flex, column, none, none, none);
                         .card_number{
                             width: 100%;
                             .card_text {
-                                font-family: Arial, Helvetica, sans-serif;
-                                color: rgb(70, 68, 68);
+                                font-family: map-get($card_text, font-family);
+                                color: map-get($card_text, color)
                             }
                         }
                         .card_names {
                             display: flex;
                             width: 100%;
                             .card_text {
-                                font-family: Arial, Helvetica, sans-serif;
-                                color: rgb(70, 68, 68);
+                                font-family: map-get($card_text, font-family);
+                                color: map-get($card_text, color)
                             }
                         }
                         
