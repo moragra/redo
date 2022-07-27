@@ -19,6 +19,11 @@
     padding: 10px;
 }
 
+a{
+    text-decoration: none;
+    color: rgb(44, 44, 44);
+}
+
 /*Products*/
 
 .container_products {
@@ -88,7 +93,6 @@
         h4{
             font-family: $font_family;
             color: black;
-            padding: 10px;
         }
     }
     main {
@@ -109,11 +113,14 @@
     }
     aside {
         grid-area: aside;
+        display: flex;
+        justify-content: center;
         .aside_payment{
             @include Flex_Properties(flex, column, none, start, none);
             height: 95%;
             margin-top: 10px;
             margin-bottom: 10px;
+            width: 87%;
             .payment_details {
                 background-color: rgb(195, 195, 195);
                 h4 {
@@ -121,8 +128,9 @@
                     color: black;
                 }
                 .card{
+                    left: 13%;
                     background-color: #3983f3;
-                    width: 110%;
+                    width: 103%;
                     box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
                     border-radius: 20px;
                     .visa {
@@ -135,11 +143,15 @@
                     .card_info {
                         width: 100%;
                         @include Flex_Properties(flex, column, none, none, none);
+                        p{
+                            font-size: 12px;
+                        }
                         .card_number{
                             width: 100%;
                             .card_text {
                                 font-family: map-get($card_text, font-family);
                                 color: map-get($card_text, color)
+
                             }
                         }
                         .card_names {
